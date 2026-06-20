@@ -5,86 +5,85 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Course Details | It Legend</title>
     <!-- Tailwind CDN -->
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
     <!-- Fontawesome CDN -->
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
-      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <!-- CSS File -->
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <!-- head -->
-    <header class="bg-sky-50">
+    <!-- HEADER  -->
+    <header class="bg-sky-50" aria-label="Page header">
       <section class="container mx-auto py-3 px-6">
-        <!-- breadcrumb -->
-        <nav class="flex items-center gap-3">
+        <!-- breadcrumb with aria-label -->
+        <nav class="flex items-center gap-3 text-sm" aria-label="Breadcrumb">
           <a
             href="#home"
-            class="text-gray-500 capitalize hover:underline hover:text-black transition-all"
+            class="text-gray-500 capitalize hover:text-black transition-colors hover:underline focus:underline"
             >Home</a
           >
-          <span
-            ><svg
+          <span aria-hidden="true" class="text-gray-500">
+            <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
+              width="16"
+              height="16"
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
               stroke-width="2"
               stroke-linecap="round"
               stroke-linejoin="round"
-              class="lucide lucide-chevron-right-icon lucide-chevron-right text-gray-500 w-3 h-3 mt-1"
+              class="w-4 h-4"
             >
               <path d="m9 18 6-6-6-6" />
             </svg>
           </span>
           <a
             href="#courses"
-            class="text-gray-500 capitalize hover:underline hover:text-black transition-all"
+            class="text-gray-500 capitalize hover:text-black transition-colors hover:underline focus:underline"
             >Courses</a
           >
-          <span
-            ><svg
+          <span aria-hidden="true" class="text-gray-500">
+            <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
+              width="16"
+              height="16"
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
               stroke-width="2"
               stroke-linecap="round"
               stroke-linejoin="round"
-              class="lucide lucide-chevron-right-icon lucide-chevron-right text-gray-500 w-3 h-3 mt-1"
+              class="w-4 h-4"
             >
               <path d="m9 18 6-6-6-6" />
             </svg>
           </span>
-          <span class="capitalize">Course Details</span>
+          <span class="capitalize text-gray-700" aria-current="page"
+            >Course Details</span
+          >
         </nav>
-        <!-- title -->
         <h1 class="text-4xl font-bold pt-5">Starting SEO as your Home</h1>
       </section>
     </header>
-    <!-- content -->
+
+    <!-- MAIN CONTENT  -->
     <main
       class="container mx-auto py-3 px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-10"
     >
-      <!-- left -->
-      <section class="col-span-3 py-5">
-        <!-- iframe -->
-        <div class="w-full">
+      <!-- LEFT COLUMN (3/4) -->
+      <section class="col-span-3 py-5" aria-label="Course content">
+        <!-- Video iframe with lazy load & improved accessibility -->
+        <div class="video-container">
           <iframe
-            width="560"
-            height="370"
+            loading="lazy"
             src="https://www.youtube.com/embed/EReaIjxGIYU?si=80QyGc7PrCK18LOw"
-            title="YouTube video player"
-            frameborder="0"
+            title="Course introduction video: Starting SEO as your Home"
             allow="
               accelerometer;
               autoplay;
@@ -96,573 +95,435 @@
             "
             referrerpolicy="strict-origin-when-cross-origin"
             allowfullscreen
-            class="w-full"
+            class="w-full rounded-lg shadow"
           ></iframe>
         </div>
-        <!-- socail media links -->
-        <div class="flex items-center gap-2 my-5">
+
+        <!-- Social media links with aria-label -->
+        <div
+          class="flex items-center gap-2 my-5"
+          aria-label="Share this course"
+        >
           <a
             href="#facebook"
-            class="rounded-full border border-gray-500 p-1 group hover:bg-gray-500 transition-colors"
-            ><i
-              class="fa-brands fa-facebook-f text-gray-500 group-hover:text-white transition-colors"
-            ></i
-          ></a>
+            aria-label="Share on Facebook"
+            class="rounded-full border border-gray-400 p-1.5 hover:bg-gray-500 transition-colors group focus:bg-gray-500"
+          >
+            <i
+              class="fa-brands fa-facebook-f text-gray-500 group-hover:text-white transition-colors text-sm"
+            ></i>
+          </a>
           <a
             href="#twitter"
-            class="rounded-full border border-gray-500 p-1 group hover:bg-gray-500 transition-colors"
-            ><i
-              class="fa-brands fa-twitter text-gray-500 group-hover:text-white transition-colors"
-            ></i
-          ></a>
+            aria-label="Share on Twitter"
+            class="rounded-full border border-gray-400 p-1.5 hover:bg-gray-500 transition-colors group focus:bg-gray-500"
+          >
+            <i
+              class="fa-brands fa-twitter text-gray-500 group-hover:text-white transition-colors text-sm"
+            ></i>
+          </a>
           <a
-            href="#linkedin-in"
-            class="rounded-full border border-gray-500 p-1 group hover:bg-gray-500 transition-colors"
-            ><i
-              class="fa-brands fa-linkedin-in text-gray-500 group-hover:text-white transition-colors"
-            ></i
-          ></a>
+            href="#linkedin"
+            aria-label="Share on LinkedIn"
+            class="rounded-full border border-gray-400 p-1.5 hover:bg-gray-500 transition-colors group focus:bg-gray-500"
+          >
+            <i
+              class="fa-brands fa-linkedin-in text-gray-500 group-hover:text-white transition-colors text-sm"
+            ></i>
+          </a>
           <a
             href="#youtube"
-            class="rounded-full border border-gray-500 p-1 group hover:bg-gray-500 transition-colors"
-            ><i
-              class="fa-brands fa-youtube text-gray-500 group-hover:text-white transition-colors"
-            ></i
-          ></a>
+            aria-label="Share on YouTube"
+            class="rounded-full border border-gray-400 p-1.5 hover:bg-gray-500 transition-colors group focus:bg-gray-500"
+          >
+            <i
+              class="fa-brands fa-youtube text-gray-500 group-hover:text-white transition-colors text-sm"
+            ></i>
+          </a>
         </div>
 
-        <!-- course material -->
+        <!-- Course materials with improved structure -->
         <div class="my-10">
           <h2 class="text-3xl font-semibold mb-5">Course Materials</h2>
           <div
-            class="shadow-2xl rounded-md p-10 flex flex-col lg:flex-row items-center gap-10 md:gap-20"
+            class="shadow-xl rounded-md p-6 md:p-10 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 bg-white"
           >
-            <!-- left -->
-            <div class="flex flex-col gap-5 w-full">
-              <div
-                class="flex items-center justify-between w-full border-b border-gray-300"
+            <!-- left column -->
+            <ul class="space-y-4 text-sm" aria-label="Course details list">
+              <li
+                class="flex items-center justify-between border-b border-gray-200 pb-2"
               >
-                <p class="text-gray-500">
-                  <span><i class="fa-regular fa-clock"></i></span>
-                  <span>Duration:</span>
-                </p>
-                <p class="text-gray-700">3 weeks</p>
-              </div>
-              <div
-                class="flex items-center justify-between w-full border-b border-gray-300"
+                <span class="text-gray-500"
+                  ><i class="fa-regular fa-clock mr-2"></i>Duration:</span
+                >
+                <span class="text-gray-700">3 weeks</span>
+              </li>
+              <li
+                class="flex items-center justify-between border-b border-gray-200 pb-2"
               >
-                <p class="text-gray-500">
-                  <span><i class="fa-solid fa-book"></i></span>
-                  <span>Lessons:</span>
-                </p>
-                <p class="text-gray-700">8</p>
-              </div>
-              <div
-                class="flex items-center justify-between w-full border-b border-gray-300"
+                <span class="text-gray-500"
+                  ><i class="fa-solid fa-book mr-2"></i>Lessons:</span
+                >
+                <span class="text-gray-700">8</span>
+              </li>
+              <li
+                class="flex items-center justify-between border-b border-gray-200 pb-2"
               >
-                <p class="text-gray-500">
-                  <span><i class="fa-solid fa-user"></i></span>
-                  <span>Enrolled:</span>
-                </p>
-                <p class="text-gray-700">65 students</p>
-              </div>
-              <div class="flex items-center justify-between w-full">
-                <p class="text-gray-500">
-                  <span><i class="fa-solid fa-earth-africa"></i></span>
-                  <span>Language:</span>
-                </p>
-                <p class="text-gray-700">English</p>
-              </div>
-            </div>
-            <!-- right -->
-            <div class="flex flex-col gap-5 w-full">
-              <div
-                class="flex items-center justify-between w-full border-b border-gray-300"
+                <span class="text-gray-500"
+                  ><i class="fa-solid fa-user mr-2"></i>Enrolled:</span
+                >
+                <span class="text-gray-700">65 students</span>
+              </li>
+              <li class="flex items-center justify-between">
+                <span class="text-gray-500"
+                  ><i class="fa-solid fa-earth-africa mr-2"></i>Language:</span
+                >
+                <span class="text-gray-700">English</span>
+              </li>
+            </ul>
+            <!-- right column (mirrored data, but we keep distinct) -->
+            <ul
+              class="space-y-4 text-sm"
+              aria-label="Additional course details"
+            >
+              <li
+                class="flex items-center justify-between border-b border-gray-200 pb-2"
               >
-                <p class="text-gray-500">
-                  <span><i class="fa-regular fa-clock"></i></span>
-                  <span>Duration:</span>
-                </p>
-                <p class="text-gray-700">3 weeks</p>
-              </div>
-              <div
-                class="flex items-center justify-between w-full border-b border-gray-300"
+                <span class="text-gray-500"
+                  ><i class="fa-regular fa-clock mr-2"></i>Duration:</span
+                >
+                <span class="text-gray-700">3 weeks</span>
+              </li>
+              <li
+                class="flex items-center justify-between border-b border-gray-200 pb-2"
               >
-                <p class="text-gray-500">
-                  <span><i class="fa-solid fa-book"></i></span>
-                  <span>Lessons:</span>
-                </p>
-                <p class="text-gray-700">8</p>
-              </div>
-              <div
-                class="flex items-center justify-between w-full border-b border-gray-300"
+                <span class="text-gray-500"
+                  ><i class="fa-solid fa-book mr-2"></i>Lessons:</span
+                >
+                <span class="text-gray-700">8</span>
+              </li>
+              <li
+                class="flex items-center justify-between border-b border-gray-200 pb-2"
               >
-                <p class="text-gray-500">
-                  <span><i class="fa-solid fa-user"></i></span>
-                  <span>Enrolled:</span>
-                </p>
-                <p class="text-gray-700">65 students</p>
-              </div>
-              <div class="flex items-center justify-between w-full">
-                <p class="text-gray-500">
-                  <span><i class="fa-solid fa-earth-africa"></i></span>
-                  <span>Language:</span>
-                </p>
-                <p class="text-gray-700">English</p>
-              </div>
-            </div>
+                <span class="text-gray-500"
+                  ><i class="fa-solid fa-user mr-2"></i>Enrolled:</span
+                >
+                <span class="text-gray-700">65 students</span>
+              </li>
+              <li class="flex items-center justify-between">
+                <span class="text-gray-500"
+                  ><i class="fa-solid fa-earth-africa mr-2"></i>Language:</span
+                >
+                <span class="text-gray-700">English</span>
+              </li>
+            </ul>
           </div>
         </div>
 
-        <!-- testimonials -->
+        <!-- Comments / Testimonials -->
         <div class="my-10">
           <h2 class="text-3xl font-semibold mb-5">Comments</h2>
-
-          <!-- comments -->
           <div class="flex flex-col gap-5">
-            <!-- opinion 1 -->
-            <div class="flex items-start gap-5 border-b border-gray-300 py-3">
+            <!-- comment 1 -->
+            <article
+              class="flex items-start gap-4 border-b border-gray-200 py-4"
+            >
               <img
                 src="./images/man.png"
-                alt="man"
-                class="rounded-full w-20 h-20"
+                alt="Avatar of Youssef Turkey"
+                class="rounded-full w-14 h-14 md:w-20 md:h-20"
+                loading="lazy"
               />
-              <!-- info -->
-              <div class="flex flex-col gap-1">
-                <h4 class="text-xl">Youssef Turkey</h4>
-                <p class="text-gray-500">Oct 10, 2026</p>
-                <p class="text-gray-400 pt-1">
+              <div>
+                <h4 class="text-lg md:text-xl font-medium">Youssef Turkey</h4>
+                <p class="text-gray-500 text-sm">Oct 10, 2026</p>
+                <p class="text-gray-600 pt-1">
                   Lorem ipsum dolor, sit amet consectetur adipisicing elit.
                   Velit tempore numquam ducimus, beatae ullam corrupti!
                 </p>
               </div>
-            </div>
-            <!-- opinion 2 -->
-            <div class="flex items-start gap-5 border-b border-gray-300 py-3">
+            </article>
+            <!-- comment 2 -->
+            <article
+              class="flex items-start gap-4 border-b border-gray-200 py-4"
+            >
               <img
                 src="./images/man.png"
-                alt="man"
-                class="rounded-full w-20 h-20"
+                alt="Avatar of Youssef Turkey"
+                class="rounded-full w-14 h-14 md:w-20 md:h-20"
+                loading="lazy"
               />
-              <!-- info -->
-              <div class="flex flex-col gap-1">
-                <h4 class="text-xl">Youssef Turkey</h4>
-                <p class="text-gray-500">Oct 10, 2026</p>
-                <p class="text-gray-400 pt-1">
+              <div>
+                <h4 class="text-lg md:text-xl font-medium">Youssef Turkey</h4>
+                <p class="text-gray-500 text-sm">Oct 10, 2026</p>
+                <p class="text-gray-600 pt-1">
                   Lorem ipsum dolor, sit amet consectetur adipisicing elit.
                   Velit tempore numquam ducimus, beatae ullam corrupti!
                 </p>
               </div>
-            </div>
-            <!-- opinion 3 -->
-            <div class="flex items-start gap-5 py-3">
+            </article>
+            <!-- comment 3 -->
+            <article class="flex items-start gap-4 py-4">
               <img
                 src="./images/man.png"
-                alt="man"
-                class="rounded-full w-20 h-20"
+                alt="Avatar of Youssef Turkey"
+                class="rounded-full w-14 h-14 md:w-20 md:h-20"
+                loading="lazy"
               />
-              <!-- info -->
-              <div class="flex flex-col gap-1">
-                <h4 class="text-xl">Youssef Turkey</h4>
-                <p class="text-gray-500">Oct 10, 2026</p>
-                <p class="text-gray-400 pt-1">
+              <div>
+                <h4 class="text-lg md:text-xl font-medium">Youssef Turkey</h4>
+                <p class="text-gray-500 text-sm">Oct 10, 2026</p>
+                <p class="text-gray-600 pt-1">
                   Lorem ipsum dolor, sit amet consectetur adipisicing elit.
                   Velit tempore numquam ducimus, beatae ullam corrupti!
                 </p>
               </div>
-            </div>
-            <!-- form -->
-            <form>
+            </article>
+
+            <!-- Comment form with proper labels -->
+            <form class="mt-4" aria-label="Post a comment">
+              <label for="commentText" class="sr-only">Write a comment</label>
               <textarea
+                id="commentText"
                 rows="5"
                 placeholder="Write a comment"
-                class="shadow-2xl rounded-md p-5 w-full"
+                class="shadow-lg rounded-md p-5 w-full border border-gray-200 focus:border-blue-500 focus:ring-1 focus:ring-blue-500"
               ></textarea>
               <button
-                class="w-full lg:w-auto bg-[#41b69d] text-white py-4 px-8 text-lg rounded-lg my-5 cursor-pointer hover:bg-[#2e8371] transition-colors"
+                type="submit"
+                class="w-full md:w-auto bg-[#41b69d] text-white py-3 px-8 text-lg rounded-lg mt-4 cursor-pointer hover:bg-[#2e8371] transition-colors focus:ring-2 focus:ring-offset-2 focus:ring-[#41b69d]"
               >
                 <span>Submit Review</span>
-                <span><i class="fa-solid fa-arrow-right"></i></span>
+                <span class="ml-2"
+                  ><i class="fa-solid fa-arrow-right"></i
+                ></span>
               </button>
             </form>
           </div>
         </div>
       </section>
-      <!-- right -->
-      <section class="py-5">
+
+      <!-- RIGHT COLUMN (1/4) - Topics and toggle sections -->
+      <aside class="py-5" aria-label="Course topics">
         <h2 class="text-2xl font-semibold">Topic for this Course</h2>
 
-        <!-- bar -->
-        <div class="relative w-full bg-gray-200 rounded-full h-2 my-20">
+        <!-- Progress bar with accessible labels -->
+        <div
+          class="relative w-full bg-gray-200 rounded-full h-2 my-16"
+          role="progressbar"
+          aria-valuenow="63"
+          aria-valuemin="0"
+          aria-valuemax="100"
+          aria-label="Course progress 63%"
+        >
           <div
             class="absolute w-[63%] h-2 rounded-full bg-[#6abd8a] left-0"
           ></div>
           <div
-            class="text-[#485293] p-3 rounded-full border-2 border-gray-300 absolute -top-15 left-[63%] -translate-x-1/2 text-xs"
+            class="text-[#485293] p-2 rounded-full border-2 border-gray-300 absolute -top-14 left-[63%] -translate-x-1/2 text-xs bg-white shadow-sm"
           >
             You
           </div>
           <div
-            class="w-0 h-0 border-l-[6px] border-l-transparent border-r-[6px] border-r-transparent border-t-[10px] border-t-gray-300 absolute -top-3 left-[63%] -translate-x-1/2"
+            class="w-0 h-0 border-l-[6px] border-l-transparent border-r-[6px] border-r-transparent border-t-[10px] border-t-gray-300 absolute -top-2.5 left-[63%] -translate-x-1/2"
           ></div>
           <p
-            class="text-[#485293] absolute -bottom-7 left-[63%] -translate-x-1/2 text-xs"
+            class="text-[#485293] absolute -bottom-7 left-[63%] -translate-x-1/2 text-xs font-medium"
           >
             63%
           </p>
         </div>
 
-        <!-- content details -->
-        <div class="flex flex-col gap-5 lg:gap-15">
-          <!-- card 01 -->
+        <!-- Topic accordion -->
+        <div class="flex flex-col gap-4">
+          <!-- Card 1 -->
           <div
-            class="border border-gray-200 py-5 px-4git remote add origin https://github.com/YoussefTurkey11/course.git"
+            class="border border-gray-200 rounded-lg py-4 px-4 bg-white shadow-sm"
           >
-            <!-- head (toggle) -->
-            <div id="toggle" class="cursor-pointer">
-              <div class="flex items-center justify-between">
-                <h5 class="text-xl font-semibold">Week 1-4</h5>
-                <span class="text-5xl hidden" id="close">-</span>
-                <span class="text-4xl" id="plus">+</span>
+            <div
+              id="toggle1"
+              class="cursor-pointer flex justify-between items-start"
+              role="button"
+              tabindex="0"
+              aria-expanded="false"
+              aria-controls="contentToggle1"
+            >
+              <div>
+                <h5 class="text-lg font-semibold">Week 1-4</h5>
+                <p class="text-gray-500 text-sm">
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                </p>
               </div>
-              <p class="text-gray-500">
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                Numquam, natus!
-              </p>
+              <span
+                class="text-3xl leading-none ml-2"
+                id="plus1"
+                aria-hidden="true"
+                >+</span
+              >
+              <span
+                class="text-3xl leading-none hidden ml-2"
+                id="close1"
+                aria-hidden="true"
+                >−</span
+              >
             </div>
-            <!-- data content (toggle) -->
             <ul
-              class="hidden my-5 border-y border-gray-200 flex flex-col gap-5"
-              id="contentToggle"
+              id="contentToggle1"
+              class="hidden toggle-content mt-4 border-t border-gray-200 pt-4 space-y-2 text-sm"
             >
               <li
-                class="text-gray-500 text-sm border-b border-gray-200 py-2 flex items-start justify-between"
+                class="flex items-center justify-between text-gray-600 border-b border-gray-100 pb-2"
               >
-                <a href="">
-                  <span
-                    ><i
-                      class="text-gray-400 text-xs fa-solid fa-paper-plane"
-                    ></i
-                  ></span>
-                  <span>Introduction</span>
-                </a>
-                <span
-                  ><i class="text-gray-400 text-xs fa-solid fa-lock"></i
-                ></span>
+                <a href="#" class="hover:text-blue-600"
+                  ><i class="fa-solid fa-paper-plane mr-2 text-gray-400"></i
+                  >Introduction</a
+                ><i class="fa-solid fa-lock text-gray-400"></i>
               </li>
               <li
-                class="text-gray-500 text-sm border-b border-gray-200 py-2 flex items-start justify-between"
+                class="flex items-center justify-between text-gray-600 border-b border-gray-100 pb-2"
               >
-                <a href="">
-                  <span
-                    ><i
-                      class="text-gray-400 text-xs fa-solid fa-paper-plane"
-                    ></i
-                  ></span>
-                  <span>Course Overview</span>
-                </a>
-                <span
-                  ><i class="text-gray-400 text-xs fa-solid fa-lock"></i
-                ></span>
+                <a href="#" class="hover:text-blue-600"
+                  ><i class="fa-solid fa-paper-plane mr-2 text-gray-400"></i
+                  >Course Overview</a
+                ><i class="fa-solid fa-lock text-gray-400"></i>
               </li>
               <li
-                class="text-gray-500 text-sm border-b border-gray-200 py-2 flex items-start justify-between"
+                class="flex items-center justify-between text-gray-600 border-b border-gray-100 pb-2"
               >
-                <a href="">
-                  <span
-                    ><i
-                      class="text-gray-400 text-xs fa-solid fa-paper-plane"
-                    ></i
-                  ></span>
-                  <span>Course Overview</span>
-                </a>
-                <span
-                  ><i class="text-gray-400 text-xs fa-solid fa-lock"></i
-                ></span>
+                <a href="#" class="hover:text-blue-600"
+                  ><i class="fa-solid fa-paper-plane mr-2 text-gray-400"></i
+                  >Course Exercise / Reference Files</a
+                ><i class="fa-solid fa-lock text-gray-400"></i>
               </li>
-              <li
-                class="text-gray-500 text-sm border-b border-gray-200 py-2 flex items-start justify-between"
-              >
-                <a href="">
-                  <span
-                    ><i
-                      class="text-gray-400 text-xs fa-solid fa-paper-plane"
-                    ></i
-                  ></span>
-                  <span>Course Exercise / Reference Files</span>
-                </a>
-                <span
-                  ><i class="text-gray-400 text-xs fa-solid fa-lock"></i
-                ></span>
-              </li>
-              <li
-                class="text-gray-500 text-sm border-b border-gray-200 py-2 flex items-start justify-between"
-              >
-                <a href="">
-                  <span
-                    ><i
-                      class="text-gray-400 text-xs fa-solid fa-paper-plane"
-                    ></i
-                  ></span>
-                  <span
-                    >Code Editor Installation (Optional if you have one)</span
-                  >
-                </a>
-                <span
-                  ><i class="text-gray-400 text-xs fa-solid fa-lock"></i
-                ></span>
-              </li>
-              <li
-                class="text-gray-500 text-sm py-2 flex items-start justify-between"
-              >
-                <a href="">
-                  <span
-                    ><i
-                      class="text-gray-400 text-xs fa-solid fa-paper-plane"
-                    ></i
-                  ></span>
-                  <span>Embedding PHP in HTML</span>
-                </a>
-                <span
-                  ><i class="text-gray-400 text-xs fa-solid fa-lock"></i
-                ></span>
+              <li class="flex items-center justify-between text-gray-600">
+                <a href="#" class="hover:text-blue-600"
+                  ><i class="fa-solid fa-paper-plane mr-2 text-gray-400"></i
+                  >Embedding PHP in HTML</a
+                ><i class="fa-solid fa-lock text-gray-400"></i>
               </li>
             </ul>
           </div>
-          <!-- card 02 -->
+          <!-- Card 2 -->
           <div
-            class="border border-gray-200 py-5 px-4git remote add origin https://github.com/YoussefTurkey11/course.git"
+            class="border border-gray-200 rounded-lg py-4 px-4 bg-white shadow-sm"
           >
-            <!-- head (toggle) -->
-            <div id="toggle2" class="cursor-pointer">
-              <div class="flex items-center justify-between">
-                <h5 class="text-xl font-semibold">Week 1-4</h5>
-                <span class="text-5xl hidden" id="close2">-</span>
-                <span class="text-4xl" id="plus2">+</span>
+            <div
+              id="toggle2"
+              class="cursor-pointer flex justify-between items-start"
+              role="button"
+              tabindex="0"
+              aria-expanded="false"
+              aria-controls="contentToggle2"
+            >
+              <div>
+                <h5 class="text-lg font-semibold">Week 5-8</h5>
+                <p class="text-gray-500 text-sm">
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                </p>
               </div>
-              <p class="text-gray-500">
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                Numquam, natus!
-              </p>
+              <span
+                class="text-3xl leading-none ml-2"
+                id="plus2"
+                aria-hidden="true"
+                >+</span
+              >
+              <span
+                class="text-3xl leading-none hidden ml-2"
+                id="close2"
+                aria-hidden="true"
+                >−</span
+              >
             </div>
-            <!-- data content (toggle) -->
             <ul
-              class="hidden my-5 border-y border-gray-200 flex flex-col gap-5"
               id="contentToggle2"
+              class="hidden toggle-content mt-4 border-t border-gray-200 pt-4 space-y-2 text-sm"
             >
               <li
-                class="text-gray-500 text-sm border-b border-gray-200 py-2 flex items-start justify-between"
+                class="flex items-center justify-between text-gray-600 border-b border-gray-100 pb-2"
               >
-                <a href="">
-                  <span
-                    ><i
-                      class="text-gray-400 text-xs fa-solid fa-paper-plane"
-                    ></i
-                  ></span>
-                  <span>Introduction</span>
-                </a>
-                <span
-                  ><i class="text-gray-400 text-xs fa-solid fa-lock"></i
-                ></span>
+                <a href="#" class="hover:text-blue-600"
+                  ><i class="fa-solid fa-paper-plane mr-2 text-gray-400"></i
+                  >Advanced SEO</a
+                ><i class="fa-solid fa-lock text-gray-400"></i>
               </li>
               <li
-                class="text-gray-500 text-sm border-b border-gray-200 py-2 flex items-start justify-between"
+                class="flex items-center justify-between text-gray-600 border-b border-gray-100 pb-2"
               >
-                <a href="">
-                  <span
-                    ><i
-                      class="text-gray-400 text-xs fa-solid fa-paper-plane"
-                    ></i
-                  ></span>
-                  <span>Course Overview</span>
-                </a>
-                <span
-                  ><i class="text-gray-400 text-xs fa-solid fa-lock"></i
-                ></span>
+                <a href="#" class="hover:text-blue-600"
+                  ><i class="fa-solid fa-paper-plane mr-2 text-gray-400"></i
+                  >Keyword Research</a
+                ><i class="fa-solid fa-lock text-gray-400"></i>
               </li>
-              <li
-                class="text-gray-500 text-sm border-b border-gray-200 py-2 flex items-start justify-between"
-              >
-                <a href="">
-                  <span
-                    ><i
-                      class="text-gray-400 text-xs fa-solid fa-paper-plane"
-                    ></i
-                  ></span>
-                  <span>Course Overview</span>
-                </a>
-                <span
-                  ><i class="text-gray-400 text-xs fa-solid fa-lock"></i
-                ></span>
-              </li>
-              <li
-                class="text-gray-500 text-sm border-b border-gray-200 py-2 flex items-start justify-between"
-              >
-                <a href="">
-                  <span
-                    ><i
-                      class="text-gray-400 text-xs fa-solid fa-paper-plane"
-                    ></i
-                  ></span>
-                  <span>Course Exercise / Reference Files</span>
-                </a>
-                <span
-                  ><i class="text-gray-400 text-xs fa-solid fa-lock"></i
-                ></span>
-              </li>
-              <li
-                class="text-gray-500 text-sm border-b border-gray-200 py-2 flex items-start justify-between"
-              >
-                <a href="">
-                  <span
-                    ><i
-                      class="text-gray-400 text-xs fa-solid fa-paper-plane"
-                    ></i
-                  ></span>
-                  <span
-                    >Code Editor Installation (Optional if you have one)</span
-                  >
-                </a>
-                <span
-                  ><i class="text-gray-400 text-xs fa-solid fa-lock"></i
-                ></span>
-              </li>
-              <li
-                class="text-gray-500 text-sm py-2 flex items-start justify-between"
-              >
-                <a href="">
-                  <span
-                    ><i
-                      class="text-gray-400 text-xs fa-solid fa-paper-plane"
-                    ></i
-                  ></span>
-                  <span>Embedding PHP in HTML</span>
-                </a>
-                <span
-                  ><i class="text-gray-400 text-xs fa-solid fa-lock"></i
-                ></span>
+              <li class="flex items-center justify-between text-gray-600">
+                <a href="#" class="hover:text-blue-600"
+                  ><i class="fa-solid fa-paper-plane mr-2 text-gray-400"></i
+                  >Content Strategy</a
+                ><i class="fa-solid fa-lock text-gray-400"></i>
               </li>
             </ul>
           </div>
-          <!-- card 03 -->
+          <!-- Card 3 -->
           <div
-            class="border border-gray-200 py-5 px-4git remote add origin https://github.com/YoussefTurkey11/course.git"
+            class="border border-gray-200 rounded-lg py-4 px-4 bg-white shadow-sm"
           >
-            <!-- head (toggle) -->
-            <div id="toggle3" class="cursor-pointer">
-              <div class="flex items-center justify-between">
-                <h5 class="text-xl font-semibold">Week 1-4</h5>
-                <span class="text-5xl hidden" id="close3">-</span>
-                <span class="text-4xl" id="plus3">+</span>
+            <div
+              id="toggle3"
+              class="cursor-pointer flex justify-between items-start"
+              role="button"
+              tabindex="0"
+              aria-expanded="false"
+              aria-controls="contentToggle3"
+            >
+              <div>
+                <h5 class="text-lg font-semibold">Week 9-12</h5>
+                <p class="text-gray-500 text-sm">
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                </p>
               </div>
-              <p class="text-gray-500">
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                Numquam, natus!
-              </p>
+              <span
+                class="text-3xl leading-none ml-2"
+                id="plus3"
+                aria-hidden="true"
+                >+</span
+              >
+              <span
+                class="text-3xl leading-none hidden ml-2"
+                id="close3"
+                aria-hidden="true"
+                >−</span
+              >
             </div>
-            <!-- data content (toggle) -->
             <ul
-              class="hidden my-5 border-y border-gray-200 flex flex-col gap-5"
               id="contentToggle3"
+              class="hidden toggle-content mt-4 border-t border-gray-200 pt-4 space-y-2 text-sm"
             >
               <li
-                class="text-gray-500 text-sm border-b border-gray-200 py-2 flex items-start justify-between"
+                class="flex items-center justify-between text-gray-600 border-b border-gray-100 pb-2"
               >
-                <a href="">
-                  <span
-                    ><i
-                      class="text-gray-400 text-xs fa-solid fa-paper-plane"
-                    ></i
-                  ></span>
-                  <span>Introduction</span>
-                </a>
-                <span
-                  ><i class="text-gray-400 text-xs fa-solid fa-lock"></i
-                ></span>
+                <a href="#" class="hover:text-blue-600"
+                  ><i class="fa-solid fa-paper-plane mr-2 text-gray-400"></i
+                  >Analytics & Reporting</a
+                ><i class="fa-solid fa-lock text-gray-400"></i>
               </li>
               <li
-                class="text-gray-500 text-sm border-b border-gray-200 py-2 flex items-start justify-between"
+                class="flex items-center justify-between text-gray-600 border-b border-gray-100 pb-2"
               >
-                <a href="">
-                  <span
-                    ><i
-                      class="text-gray-400 text-xs fa-solid fa-paper-plane"
-                    ></i
-                  ></span>
-                  <span>Course Overview</span>
-                </a>
-                <span
-                  ><i class="text-gray-400 text-xs fa-solid fa-lock"></i
-                ></span>
+                <a href="#" class="hover:text-blue-600"
+                  ><i class="fa-solid fa-paper-plane mr-2 text-gray-400"></i
+                  >Technical SEO</a
+                ><i class="fa-solid fa-lock text-gray-400"></i>
               </li>
-              <li
-                class="text-gray-500 text-sm border-b border-gray-200 py-2 flex items-start justify-between"
-              >
-                <a href="">
-                  <span
-                    ><i
-                      class="text-gray-400 text-xs fa-solid fa-paper-plane"
-                    ></i
-                  ></span>
-                  <span>Course Overview</span>
-                </a>
-                <span
-                  ><i class="text-gray-400 text-xs fa-solid fa-lock"></i
-                ></span>
-              </li>
-              <li
-                class="text-gray-500 text-sm border-b border-gray-200 py-2 flex items-start justify-between"
-              >
-                <a href="">
-                  <span
-                    ><i
-                      class="text-gray-400 text-xs fa-solid fa-paper-plane"
-                    ></i
-                  ></span>
-                  <span>Course Exercise / Reference Files</span>
-                </a>
-                <span
-                  ><i class="text-gray-400 text-xs fa-solid fa-lock"></i
-                ></span>
-              </li>
-              <li
-                class="text-gray-500 text-sm border-b border-gray-200 py-2 flex items-start justify-between"
-              >
-                <a href="">
-                  <span
-                    ><i
-                      class="text-gray-400 text-xs fa-solid fa-paper-plane"
-                    ></i
-                  ></span>
-                  <span
-                    >Code Editor Installation (Optional if you have one)</span
-                  >
-                </a>
-                <span
-                  ><i class="text-gray-400 text-xs fa-solid fa-lock"></i
-                ></span>
-              </li>
-              <li
-                class="text-gray-500 text-sm py-2 flex items-start justify-between"
-              >
-                <a href="">
-                  <span
-                    ><i
-                      class="text-gray-400 text-xs fa-solid fa-paper-plane"
-                    ></i
-                  ></span>
-                  <span>Embedding PHP in HTML</span>
-                </a>
-                <span
-                  ><i class="text-gray-400 text-xs fa-solid fa-lock"></i
-                ></span>
+              <li class="flex items-center justify-between text-gray-600">
+                <a href="#" class="hover:text-blue-600"
+                  ><i class="fa-solid fa-paper-plane mr-2 text-gray-400"></i
+                  >Link Building</a
+                ><i class="fa-solid fa-lock text-gray-400"></i>
               </li>
             </ul>
           </div>
         </div>
-      </section>
+      </aside>
     </main>
   </body>
-  <!-- JS File -->
   <script src="./app.js"></script>
 </html>

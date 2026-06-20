@@ -1,30 +1,52 @@
-const toggle = document.getElementById("toggle"),
-  contentToggle = document.getElementById("contentToggle"),
-  close = document.getElementById("close"),
-  plus = document.getElementById("plus");
+(function () {
+  function setupToggle(toggleId, contentId, plusId, closeId) {
+    const toggle = document.getElementById(toggleId);
+    const content = document.getElementById(contentId);
+    const plus = document.getElementById(plusId);
+    const close = document.getElementById(closeId);
+    if (!toggle || !content || !plus || !close) return;
 
-const toggle2 = document.getElementById("toggle2"),
-  contentToggle2 = document.getElementById("contentToggle2"),
-  close2 = document.getElementById("close2"),
-  plus2 = document.getElementById("plus2");
+    function togglePanel(expand) {
+      const isHidden = content.classList.contains("hidden");
+      if (expand === true) {
+        content.classList.remove("hidden");
+        plus.classList.add("hidden");
+        close.classList.remove("hidden");
+        toggle.setAttribute("aria-expanded", "true");
+      } else if (expand === false) {
+        content.classList.add("hidden");
+        plus.classList.remove("hidden");
+        close.classList.add("hidden");
+        toggle.setAttribute("aria-expanded", "false");
+      } else {
+        if (isHidden) {
+          content.classList.remove("hidden");
+          plus.classList.add("hidden");
+          close.classList.remove("hidden");
+          toggle.setAttribute("aria-expanded", "true");
+        } else {
+          content.classList.add("hidden");
+          plus.classList.remove("hidden");
+          close.classList.add("hidden");
+          toggle.setAttribute("aria-expanded", "false");
+        }
+      }
+    }
 
-const toggle3 = document.getElementById("toggle3"),
-  contentToggle3 = document.getElementById("contentToggle3"),
-  close3 = document.getElementById("close3"),
-  plus3 = document.getElementById("plus3");
+    toggle.addEventListener("click", function (e) {
+      e.stopPropagation();
+      togglePanel();
+    });
 
-toggle.addEventListener("click", () => {
-  (contentToggle.classList.toggle("hidden"),
-    close.classList.toggle("hidden"),
-    plus.classList.toggle("hidden"));
-});
-toggle2.addEventListener("click", () => {
-  (contentToggle2.classList.toggle("hidden"),
-    close2.classList.toggle("hidden"),
-    plus2.classList.toggle("hidden"));
-});
-toggle3.addEventListener("click", () => {
-  (contentToggle3.classList.toggle("hidden"),
-    close3.classList.toggle("hidden"),
-    plus3.classList.toggle("hidden"));
-});
+    toggle.addEventListener("keydown", function (e) {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        togglePanel();
+      }
+    });
+  }
+
+  setupToggle("toggle1", "contentToggle1", "plus1", "close1");
+  setupToggle("toggle2", "contentToggle2", "plus2", "close2");
+  setupToggle("toggle3", "contentToggle3", "plus3", "close3");
+})();
